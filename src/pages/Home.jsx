@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main>
+      <main style={{ paddingTop: "var(--header-h)" }}>
         <Hero />
         <TrustBar />
         <About />

@@ -1,14 +1,14 @@
 import { copy } from "../constants/copy";
 import { CONFIG } from "../constants/config";
-import { ArrowRight, ShieldCheck } from "lucide-react";
-import { Link } from "react-router-dom";
+import { WHATSAPP_LINK } from "../constants/links";
+import { ArrowRight, ShieldCheck, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="section pt-32 md:pt-36">
-      <div className="grid md:grid-cols-2 gap-10 items-center">
+    <section className="pt-6 section md:pt-8">
+      <div className="grid items-center gap-10 md:grid-cols-2">
         <div>
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-8 sm:mb-10">
             <span className="pill">
               <ShieldCheck size={16} />
               Confidencialidad profesional
@@ -17,7 +17,7 @@ export default function Hero() {
             <span className="pill">Comunicación simple</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
+          <h1 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl md:leading-[1.15]">
             {copy.hero.title}
           </h1>
 
@@ -26,16 +26,26 @@ export default function Hero() {
           <ul className="mt-6 space-y-2 text-white/85">
             {copy.hero.bullets.map((b, i) => (
               <li key={i} className="flex gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-white/70" />
+                <span className="w-2 h-2 mt-1 rounded-full bg-white/70" />
                 <span>{b}</span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-8 flex gap-4 flex-wrap">
-            <Link to="/agenda" className="btn-primary">
-              Agendar consulta <ArrowRight size={18} />
-            </Link>
+          <div className="flex flex-wrap gap-4 mt-8">
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+            >
+              Consultar por WhatsApp <ArrowRight size={18} />
+            </a>
+
+            <a className="btn-secondary" href={`mailto:${CONFIG.email}`}>
+              Email <Mail size={18} />
+            </a>
+
             <a href="#areas" className="btn-secondary">
               Ver áreas de práctica
             </a>
@@ -48,30 +58,30 @@ export default function Hero() {
           <div className="flex items-center justify-between gap-4">
             <div>
               <div className="text-sm text-white/70">Marca personal</div>
-              <div className="text-2xl font-semibold tracking-tight mt-1">
+              <div className="mt-1 text-2xl font-semibold tracking-tight">
                 {CONFIG.brandName}
               </div>
               <div className="text-white/70">{CONFIG.brandSubtitle}</div>
             </div>
 
             {/* Placeholder foto */}
-            <div className="h-20 w-20 rounded-2xl bg-white/10 border border-white/10" />
+            <div className="w-20 h-20 border rounded-2xl border-white/10 bg-white/10" />
           </div>
 
-          <div className="mt-6 grid grid-cols-2 gap-3">
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+          <div className="grid grid-cols-2 gap-3 mt-6">
+            <div className="p-4 border rounded-2xl border-white/10 bg-white/5">
               <div className="text-sm text-white/70">Enfoque</div>
               <div className="mt-1 font-semibold">Claridad + Estrategia</div>
             </div>
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+            <div className="p-4 border rounded-2xl border-white/10 bg-white/5">
               <div className="text-sm text-white/70">Formato</div>
               <div className="mt-1 font-semibold">Online / Presencial</div>
             </div>
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+            <div className="p-4 border rounded-2xl border-white/10 bg-white/5">
               <div className="text-sm text-white/70">Objetivo</div>
               <div className="mt-1 font-semibold">Ordenar decisiones</div>
             </div>
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+            <div className="p-4 border rounded-2xl border-white/10 bg-white/5">
               <div className="text-sm text-white/70">Tono</div>
               <div className="mt-1 font-semibold">Profesional y humano</div>
             </div>

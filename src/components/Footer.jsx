@@ -1,11 +1,12 @@
 import { CONFIG } from "../constants/config";
 import { copy } from "../constants/copy";
+import { WHATSAPP_LINK } from "../constants/links";
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black/20" id="contacto">
-      <div className="max-w-6xl mx-auto px-6 py-10">
-        <div className="grid md:grid-cols-3 gap-6">
+      <div className="max-w-6xl px-6 py-10 mx-auto">
+        <div className="grid gap-6 md:grid-cols-3">
           <div>
             <div className="font-semibold">{CONFIG.brandName}</div>
             <div className="text-sm text-white/70">{CONFIG.brandSubtitle}</div>
@@ -14,10 +15,10 @@ export default function Footer() {
 
           <div>
             <div className="text-sm text-white/70">Contacto</div>
-            <div className="mt-2 grid gap-2 text-white/85">
+            <div className="grid gap-2 mt-2 text-white/85">
               <a
                 className="link"
-                href={CONFIG.whatsappUrl}
+                href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -26,15 +27,12 @@ export default function Footer() {
               <a className="link" href={`mailto:${CONFIG.email}`}>
                 {CONFIG.email}
               </a>
-              <a className="link" href="/agenda">
-                Agenda
-              </a>
             </div>
           </div>
 
           <div>
             <div className="text-sm text-white/70">Legal</div>
-            <div className="mt-2 grid gap-2 text-white/85">
+            <div className="grid gap-2 mt-2 text-white/85">
               <a className="link" href="#">
                 {copy.footer.privacy}
               </a>

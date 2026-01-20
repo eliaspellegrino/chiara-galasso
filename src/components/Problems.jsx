@@ -1,6 +1,7 @@
 import { copy } from "../constants/copy";
-import { AlertTriangle, CheckCircle2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { CONFIG } from "../constants/config";
+import { WHATSAPP_LINK } from "../constants/links";
+import { AlertTriangle, CheckCircle2, Mail } from "lucide-react";
 
 export default function Problems() {
   return (
@@ -12,6 +13,7 @@ export default function Problems() {
               <AlertTriangle size={18} />
               <span className="text-sm">Dolor / urgencia</span>
             </div>
+
             <h2 className="mt-2 text-3xl font-semibold tracking-tight">
               {copy.problems.title}
             </h2>
@@ -26,10 +28,19 @@ export default function Problems() {
               ))}
             </ul>
 
-            <div className="mt-8">
-              <Link to="/agenda" className="btn-primary">
-                Agendar consulta
-              </Link>
+            <div className="flex flex-wrap gap-3 mt-8">
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary"
+              >
+                Consultar por WhatsApp
+              </a>
+
+              <a className="btn-secondary" href={`mailto:${CONFIG.email}`}>
+                Email <Mail size={18} />
+              </a>
             </div>
           </div>
 

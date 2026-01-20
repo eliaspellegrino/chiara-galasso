@@ -1,28 +1,29 @@
 import { copy } from "../constants/copy";
 import { CONFIG } from "../constants/config";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { WHATSAPP_LINK } from "../constants/links";
+import { ArrowRight, Mail } from "lucide-react";
 
 export default function FinalCTA() {
   return (
     <section className="section">
-      <div className="card text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+      <div className="text-center card">
+        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
           {copy.finalCta.title}
         </h2>
         <p className="mt-4 text-white/80">{copy.finalCta.subtitle}</p>
 
-        <div className="mt-8 flex items-center justify-center gap-3 flex-wrap">
-          <Link to="/agenda" className="btn-primary">
-            {copy.finalCta.primary} <ArrowRight size={18} />
-          </Link>
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
           <a
-            className="btn-secondary"
-            href={CONFIG.whatsappUrl}
+            href={WHATSAPP_LINK}
             target="_blank"
             rel="noreferrer"
+            className="btn-primary"
           >
-            {copy.finalCta.secondary}
+            Consultar por WhatsApp <ArrowRight size={18} />
+          </a>
+
+          <a className="btn-secondary" href={`mailto:${CONFIG.email}`}>
+            Escribirme por email <Mail size={18} />
           </a>
         </div>
 

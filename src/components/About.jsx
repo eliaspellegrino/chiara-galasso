@@ -1,6 +1,7 @@
 import { copy } from "../constants/copy";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { CONFIG } from "../constants/config";
+import { WHATSAPP_LINK } from "../constants/links";
+import { ArrowRight, Mail } from "lucide-react";
 
 export default function About() {
   return (
@@ -17,17 +18,27 @@ export default function About() {
             </p>
 
             <div className="flex flex-wrap gap-3 mt-6">
-              <Link to="/agenda" className="btn-primary">
-                Agendar consulta <ArrowRight size={18} />
-              </Link>
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary"
+              >
+                Consultar por WhatsApp <ArrowRight size={18} />
+              </a>
+
+              <a className="btn-secondary" href={`mailto:${CONFIG.email}`}>
+                Email <Mail size={18} />
+              </a>
+
               <a href="#areas" className="btn-secondary">
                 Ver áreas
               </a>
             </div>
 
             <div className="mt-6 text-sm text-white/65">
-              En la consulta inicial ordenamos el problema y definimos un plan
-              posible, sin prometer resultados.
+              La consulta es paga y se coordina por WhatsApp o email. Te explico
+              opciones y próximos pasos sin prometer resultados.
             </div>
           </div>
 

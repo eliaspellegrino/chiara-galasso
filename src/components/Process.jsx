@@ -1,5 +1,5 @@
 import { copy } from "../constants/copy";
-import { Link } from "react-router-dom";
+import { WHATSAPP_LINK } from "../constants/links";
 import { ArrowRight } from "lucide-react";
 
 export default function Process() {
@@ -14,9 +14,15 @@ export default function Process() {
             <p className="mt-4 text-white/80">{copy.process.subtitle}</p>
 
             <div className="flex flex-wrap gap-3 mt-8">
-              <Link to="/agenda" className="btn-primary">
-                Agendar consulta <ArrowRight size={18} />
-              </Link>
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary"
+              >
+                Consultar por WhatsApp <ArrowRight size={18} />
+              </a>
+
               <a href="#recursos" className="btn-secondary">
                 Ver guía
               </a>

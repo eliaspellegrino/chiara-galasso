@@ -104,3 +104,13 @@ body {
 .link:hover {
   text-decoration-color: rgba(255, 255, 255, 0.7);
 }
+
+:root {
+  --header-h: 72px; /* desktop */
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-h: 80px; /* mobile */
+  }
+}
